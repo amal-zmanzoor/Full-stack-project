@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for the card-header section */
+        .card-header {
+            background-color: #b5cacc; /* Change the background color */
+            color: #000000; /* Change the text color */
+        }
+
+        /* Custom styles for the background of the entire page */
+        body {
+            background-color: #4cbdb8; /* Change the background color of the entire page */
+        }
+
+        .btn-custom-submit-button {
+        background-color: #e9935b; /* Change the background color of the button */
+        color: #ffffff; /* Change the text color of the button */
+        /* Add any other desired styles for the submit button */
+    }
+    </style>
+    <script type="text/javascript" src="validateupdate.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h4>Form for Updating Employee Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="update_backend.php" method="POST" onsubmit="return validate_input();">
+                            <div class="form-group mb-3">
+                                <label>Select the field to update</label><br>
+                                <select name="table_field" id="table_field" class="form-control" required>
+                                    <option value="">Select Field</option>
+                                    <option value="employee_id">Employee ID</option>
+                                    <option value="name">Name</option>
+                                    <option value="address">Address</option>
+                                    <option value="salary">Salary</option>
+                                    <option value="nin">National Insurance Number</option>
+                                    <option value="manager_id">Manager ID</option>
+                                    <option value="belongs_to_dept">Department</option>
+                                    <option value="emergency_name">Emergency Name</option>
+                                    <option value="emergency_relationship">Emergency Relationship</option>
+                                    <option value="emergency_phone">Emergency Phone</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="emp_id">Employee ID to be updated</label><br>
+                                <input type="text" name="emp_id" id="emp_id" class="form-control" required/>
+                                <span class="error" id="emp_id_error"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="newval">Update to:</label><br>
+                                <input type="text" name="newval" id="newval" class="form-control" required/>
+                                <span class="error" id="newval_error"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="submit" value="Submit" name="submit" class="btn btn-custom-submit-button" id="submit" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
